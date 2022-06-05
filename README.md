@@ -17,6 +17,8 @@ Offset Dumper - A text file based offset dumper in which can retrieve or print c
 OffsetDumper::DumpPartialClass("Class Engine.Actor", std::vector<std::string>{ "TargetingTeam", "CreationTime","RootComponent", "LastRenderTime", "bForceNonBlockingHits" }, std::vector<std::string>{ "int", "double", "USceneComponent*", "double", "bool" });**
 ```
 
+![ClassDump](https://user-images.githubusercontent.com/106895976/172035457-64368257-e0cd-4895-82f2-79a6f781b975.png)
+
 # + Instructions (Function Dump) 📝
 **[1] - Visit 'Dump/Dump.cpp' & Inside 'OffsetDumper::DumpRequestedOffsets' Function Code Write Out The Calls You Want To Make For Target Functions!**
 
@@ -36,6 +38,8 @@ auto FunctionAddress = DetourFindFunction("ShooterGame.exe", "UObject::ProcessEv
 
 # + DLL Permissions (UWP)
 **[NOTICE]: Because This Dumper Targets The Universal Windows Platform Version Of Ark You Must Set Special Privileges For The DLL To Inject After Building**
+
+![PermissionsTab](https://user-images.githubusercontent.com/106895976/172035515-365ea491-ef8c-4675-a622-3ba1b8171789.png)
 
 **For Efficiency I Recommend Creating A Permissions.bat File You Can Run To Set Them For You - See Example Below**
 
