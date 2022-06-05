@@ -34,3 +34,29 @@ auto Offset = OffsetDumper::FindFunctionOffset("UObject::ProcessEvent");
 auto FunctionAddress = DetourFindFunction("ShooterGame.exe", "UObject::ProcessEvent");
 ```
 
+# + DLL Permissions (UWP)
+**[NOTICE]: Because This Dumper Targets The Universal Windows Platform Version Of Ark You Must Set Special Privileges For The DLL To Inject After Building**
+
+**For Efficiency I Recommend Creating A Permissions.bat File You Can Run To Set Them For You - See Example Below**
+
+```bat
+@echo off
+set dir=%cd%
+echo %dir%
+icacls "%dir%\ArkOffsetDumper.dll" /grant "ALL APPLICATION PACKAGES":F
+timeout /t 1 /nobreak > NUL
+cls
+exit
+```
+
+**Or For One That Sets Every Few Seconds**
+```bat
+@echo off
+:x
+set dir=%cd%
+echo %dir%
+icacls "%dir%\ArkOffsetDumper.dll" /grant "ALL APPLICATION PACKAGES":F
+timeout /t 6
+goto x
+```
+
