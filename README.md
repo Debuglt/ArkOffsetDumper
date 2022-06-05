@@ -29,7 +29,7 @@ OffsetDumper::DumpPartialClass("Class Engine.Actor", std::vector<std::string>{ "
 auto Offset = OffsetDumper::FindFunctionOffset("UObject::ProcessEvent");
 ```
 
-**[OR]**
+**Or For Function Address**
 ```c++
 auto FunctionAddress = DetourFindFunction("ShooterGame.exe", "UObject::ProcessEvent");
 ```
